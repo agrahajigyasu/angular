@@ -1,27 +1,24 @@
 <div>
           <div class= "container">
-          <div  class="card mb-3">
-            <div class="row g-0" *ngFor="let item of listObjects ; let i = index">
-              <div class="col-md-3">
-                <img
-                  src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+          <div  class="card mb-15 mt-2 mb-1" *ngFor="let item of listObjects ; let i = index">
+            <div class="row g-0 mt-3 " >
+              <div class="col-md-3 ml-2 view overlay">
+               <a routerLink="/products/{{classType}}/{{category}}/{{i}}"><img  
+                  src='/assets/bike1.jpg'
                   alt="..."
-                  class="img-fluid"
+                  class="img-fluid mask flex-center rgba-blue-light" 
                 />
+            </a> 
+                <div class="mask flex-center rgba-blue-light">
+                   
+                </div>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title"></h5>
-                  <p class="card-text">
                  <div *ngFor = " let o of item |keyvalue">
-                    {{o.key}} : {{o.value}}
-                 </div>
-                  
-                  <a routerLink="/products/{{classType}}/{{category}}/{{i}}" class="btn btn-primary">Button</a>
-           
-                  <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </p>
+                   <b> {{o.key}} :</b> {{o.value}}
+                 </div>                  
+                  <a routerLink="/products/{{classType}}/{{category}}/{{i}}" class="btn btn-primary mt-2">View Details</a>
                 </div>
               </div>
             </div>

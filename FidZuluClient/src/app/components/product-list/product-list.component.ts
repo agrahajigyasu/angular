@@ -14,7 +14,9 @@ export class ProductListComponent implements OnInit {
   private onCompare(_left: KeyValue<any, any>, _right: KeyValue<any, any>): number {
     return -1;
   }
+
   listObjects:any = [];
+  bikeImages: any = ["bikes0.jpg", "bikes1.jpg","bikes2.jpg","bikes3.jpg"];
 
   category:string = "";
   classType:string = "";
