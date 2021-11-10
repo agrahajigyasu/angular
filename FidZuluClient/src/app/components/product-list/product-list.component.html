@@ -2,17 +2,22 @@
           <div class= "container">
           <div  class="card mb-15 mt-2 mb-1" *ngFor="let item of listObjects ; let i = index">
             <div class="row g-0 mt-3 " >
-              <div class="col-md-3 ml-2 view overlay">
+              <div class="col-md-3 ml-2 view overlay" *ngIf = 'category === "bike" '>
                <a routerLink="/products/{{classType}}/{{category}}/{{i}}"><img  
-                  src='/assets/bike1.jpg'
+                  src= {{bikeImages[i]}}
                   alt="..."
                   class="img-fluid mask flex-center rgba-blue-light" 
                 />
             </a> 
-                <div class="mask flex-center rgba-blue-light">
-                   
-                </div>
               </div>
+              <div class="col-md-3 ml-2 view overlay" *ngIf = 'category != "bike"'>
+                <a routerLink="/products/{{classType}}/{{category}}/{{i}}"><img  
+                   src= {{bookImages[i]}}
+                   alt="..."
+                   class="img-fluid mask flex-center rgba-blue-light" 
+                 />
+             </a> 
+               </div>
               <div class="col-md-8">
                 <div class="card-body">
                  <div *ngFor = " let o of item |keyvalue">

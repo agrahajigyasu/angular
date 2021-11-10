@@ -16,8 +16,8 @@ export class ProductListComponent implements OnInit {
   }
 
   listObjects:any = [];
-  bikeImages: any = ["bikes0.jpg", "bikes1.jpg","bikes2.jpg","bikes3.jpg"];
-
+  bikeImages: any = ["/assets/bike0.jpg", "/assets/bike1.jpg","/assets/bike2.jpg","assets/bike3.jpg"];
+  bookImages:any = ["/assets/book0.jpg","/assets/book1.jpg","/assets/book2.jpg","/assets/book3.jpg"]
   category:string = "";
   classType:string = "";
   constructor( private dataService : DataService, private route:ActivatedRoute ) { }
