@@ -57,8 +57,9 @@ export class ProductListComponent implements OnInit {
   ]
 
   item:String = "bookItem"
-  constructor(private route: ActivatedRoute) { }
+  constructor() { }
 
+  // private route: ActivatedRoute
   ngOnInit(): void {
 
 

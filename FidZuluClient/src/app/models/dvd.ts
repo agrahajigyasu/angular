@@ -1,4 +1,4 @@
-export interface Bike {
+export interface Dvd {
     title: string;
     mpaa_rating: string;
     studio: string;

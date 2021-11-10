@@ -1,4 +1,4 @@
-export interface Bike {
+export interface Laptop {
     product: string;
     brand: string;
     CPU: string;
