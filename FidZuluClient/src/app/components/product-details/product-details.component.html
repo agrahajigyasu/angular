@@ -11,7 +11,16 @@
         <div class="col-5 text-center">
           <ul class = "list-group" >
             <li class = "list-group-item list-group-item-dark">Product Details</li>
-            <li class = "list-group-item" *ngFor = "let item of object | keyvalue">{{ item.key }} : {{ item.value }}</li>
+            <li class = "list-group-item" *ngFor = "let item of object | keyvalue">
+              <div *ngIf = "item.key != 'price'">
+                {{ item.key }} : {{ item.value }}
+              </div>
+              <div *ngIf = "item.key == 'price'">
+                <div *ngIf = "currentCurr =='USA'" >{{ item.key }} : {{ toNum(item.value) | currency : 'USA'}} </div>
+                <div *ngIf = "currentCurr =='INR'" >{{ item.key }} : {{ toNum(item.value) | currency : 'INR'}} </div>
+                <div (click) = "toggleCurrency()" class = "btn btn-dark">Change Currency</div>
+              </div>
+            </li>
           </ul>
         </div>
         <div class="col">
