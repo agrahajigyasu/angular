@@ -1,10 +1,9 @@
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4 align-center text-primary text-center ">{{category | uppercase}}</h1>
-  </div>
-</div>
+
 <div>
           <div class= "container">
+            <br>
+            <button class="btn btn-primary" (click)="goBack()">Go Back</button>
+
           <div  class="card mb-15 mt-2 mb-1" *ngFor="let item of listObjects ; let i = index">
             <div class="row g-0 mt-3 " >
               <div class="col-md-3 ml-2 view overlay" *ngIf = 'category === "bike" '>

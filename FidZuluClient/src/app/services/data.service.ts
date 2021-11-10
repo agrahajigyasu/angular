@@ -16,11 +16,30 @@ export class DataService {
   getProducts(className:string,category:string,location:string = "USA"){
     
     let port = className == 'classA' ? 3021 : 3022;
+    let urlCategory;
 
     //http://localhost:3022/classB/laptopservice/all/USA
-    //let queryUrl = `${this.baseUrl}:${port}/${className}/${category + 'service'}/all/${location}`;
 
-    let queryUrl = this.baseUrl +"/classB/bookservice/all/India";
+    if(category=='books'){
+      urlCategory='book';
+    }
+    else if(category=='dvds'){
+      urlCategory='dvd';
+    }
+    else if(category=='laptops'){
+      urlCategory='laptop';
+    }
+    else if(category=='toys'){
+      urlCategory='toy';
+    }
+    else{
+      urlCategory= category;
+    }
+    let queryUrl = `${this.baseUrl}:${port}/${className}/${urlCategory + 'service'}/all/${location}`;
+
+    console.log("Url: "+queryUrl);
+
+   // let queryUrl = this.baseUrl +":3022/classB/bookservice/all/India";
     return  this.http.get(queryUrl);
     
   }
