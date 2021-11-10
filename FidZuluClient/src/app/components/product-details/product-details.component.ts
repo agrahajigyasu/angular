@@ -1,3 +1,4 @@
+import { KeyValue } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from 'src/app/models/book';
@@ -13,6 +14,7 @@ export class ProductDetailsComponent implements OnInit {
   books: Book[] = []
 
   objects: any[] = [];
+  object: any = null;
 
   
 
@@ -38,10 +40,15 @@ export class ProductDetailsComponent implements OnInit {
           "ISBN": "0261102214",
           "publisher": "HarperCollins"
         }
-      ]
+      ];
+
+      this.object = this.objects[this.productId];
+
       
   }
 
-  
+  private onCompare(_left: KeyValue<any, any>, _right: KeyValue<any, any>): number {
+    return -1;
+  }
 
 }

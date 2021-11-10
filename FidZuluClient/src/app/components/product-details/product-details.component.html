@@ -2,33 +2,22 @@
 <br>
 <div class="container-fluid">
 
-      <div class="row">
+      <div class="row d-flex justify-content-between align-items-center" >
         <div class="col-4">
             <img
             style="width: 400px;"
             src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/educational-toys-1628263521.jpg?crop=0.601xw:0.901xh;0.125xw,0.0938xh&resize=640:*" alt="Card image cap">
         </div>
-        <div class="col-5">
-         <h2>Product Title</h2>
-         <p class="card-subtitle">By a certain Seller (Verfied)</p>
-            <br>
-         <div class="card border-primary" style="width: 50%;">
-            <div class="card-body">
-             Price: 45$
-            </div>
-          </div>
-
-          <p class="card-body">
-              More Description and further details <br>
-              Modify this text Vishal<br>
-              As per the <br>
-              product
-          </p>
+        <div class="col-5 text-center">
+          <ul class = "list-group" >
+            <li class = "list-group-item list-group-item-dark">Product Details</li>
+            <li class = "list-group-item" *ngFor = "let item of object | keyvalue">{{ item.key }} : {{ item.value }}</li>
+          </ul>
         </div>
         <div class="col">
             <div class="card text-center">
                 <div class="card-header">
-                  45$
+                  Checkout
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">In Stock</h5>
