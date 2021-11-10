@@ -35,8 +35,8 @@ export class DataService {
     else{
       urlCategory= category;
     }
-    let classAurl:string = " http://c47f-34-124-147-146.ngrok.io";
-    let classBurl:string= "http://31e2-34-124-147-146.ngrok.io";  
+    let classAurl:String="http://015e-34-124-147-146.ngrok.io";
+    let classBurl:String="http://2907-34-124-147-146.ngrok.io";
     let queryUrl = `${className == 'classA' ? classAurl : classBurl}/${className}/${urlCategory + 'service'}/all/${location}`;
     
     console.log("a Url: "+queryUrl);
