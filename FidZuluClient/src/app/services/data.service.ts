@@ -3,32 +3,6 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { CategoryGalleryComponent } from '../components/category-gallery/category-gallery.component';
 
-const MOCK_BIKES = [
-  {
-    "name": "Mamba Sport 12\" Balance Bike",
-    "brand": "Mamba Bikes",
-    "color": "black",
-    "price": 75.88
-  },
-  {
-    "name": "DJ Fat Bike 500W",
-    "brand": "DJ Bikes",
-    "color": "grey",
-    "price": 1599.86
-  },
-  {
-    "name": "Kobe Aluminum Balance",
-    "brand": "Kobe",
-    "color": "blue",
-    "price": 88.56
-  },
-  {
-    "name": "Pomona Men's Cruiser Bike",
-    "brand": "Northwoods",
-    "color": "silver",
-    "price": 221.36
-  }
-];
 @Injectable({
   providedIn: 'root'
 })
@@ -42,13 +16,31 @@ export class DataService {
   getProducts(className:string,category:string,location:string = "USA"){
     
     let port = className == 'classA' ? 3021 : 3022;
+    let urlCategory;
 
     //http://localhost:3022/classB/laptopservice/all/USA
-    let queryUrl = `${this.baseUrl}:${port}/${className}/${category + 'service'}/all/${location}`;
-    console.log(queryUrl);
-    //return this.http.get(queryUrl);
 
-    return of(MOCK_BIKES);
+    if(category=='books'){
+      urlCategory='book';
+    }
+    else if(category=='dvds'){
+      urlCategory='dvd';
+    }
+    else if(category=='laptops'){
+      urlCategory='laptop';
+    }
+    else if(category=='toys'){
+      urlCategory='toy';
+    }
+    else{
+      urlCategory= category;
+    }
+    let queryUrl = `${this.baseUrl}:${port}/${className}/${urlCategory + 'service'}/all/${location}`;
+
+    console.log("Url: "+queryUrl);
+
+   // let queryUrl = this.baseUrl +":3022/classB/bookservice/all/India";
+    return  this.http.get(queryUrl);
     
   }
 
