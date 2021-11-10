@@ -6,8 +6,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { ProductListComponent } from './components/product-list/product-list.component';
 const routes: Routes = [
   {path:'', component : HomeComponent},
-  {path:'products/:category',component:ProductListComponent},
-  {path:'products/:category/:id',component:ProductDetailsComponent},
+  {path:'products/:class/:category',component:ProductListComponent},
+  {path:'products/:class/:category/:id',component:ProductDetailsComponent},
 ];
 
 @NgModule({
