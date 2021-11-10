@@ -16,6 +16,8 @@ export class ProductListComponent implements OnInit {
     return -1;
   }
 
+  loading:boolean=true;
+
   listObjects:any = [];
   bikeImages: any = ["/assets/bike0.jpg", "/assets/bike1.jpg","/assets/bike2.jpg","assets/bike3.jpg"];
   bookImages:any = ["/assets/book0.jpg","/assets/book1.jpg","/assets/book2.jpg","/assets/book3.jpg"]
@@ -32,7 +34,7 @@ export class ProductListComponent implements OnInit {
 
     this.category = this.route.snapshot.params['category'];
     this.classType =  this.route.snapshot.params['class'];
-    this.dataService.getProducts(this.classType,this.category).subscribe(data =>{this.listObjects = data});
+    this.dataService.getProducts(this.classType,this.category).subscribe(data =>{this.listObjects = data; this.loading=false;});
 
   }
 
