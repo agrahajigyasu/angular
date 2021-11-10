@@ -1,4 +1,4 @@
-export interface Bike {
+export interface Food {
     name: string;
     brand: string;
     weight: string;

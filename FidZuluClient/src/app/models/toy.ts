@@ -1,4 +1,4 @@
-export interface Bike {
+export interface Toy {
     name: string;
     brand: string;
     ageGroup: string;
