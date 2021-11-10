@@ -20,6 +20,8 @@ export class ProductDetailsComponent implements OnInit {
   objects: any = [];
   object: any = null;
 
+  loading:boolean=true;
+
   currentCurr:string = 'USA';
   
 
@@ -39,6 +41,7 @@ export class ProductDetailsComponent implements OnInit {
         this.objects = data;
         this.object = this.objects[this.productId];
         console.log(this.objects);
+        this.loading=false;
         });
       
   }
