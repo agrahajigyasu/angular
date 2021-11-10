@@ -14,10 +14,9 @@
               <div *ngIf = "item.key != 'price'">
                 {{ item.key }} : {{ item.value }}
               </div>
+
               <div *ngIf = "item.key == 'price'">
-                <div *ngIf = "currentCurr =='USA'" >{{ item.key }} : {{ toNum(item.value) | currency : 'USA'}} </div>
-                <div *ngIf = "currentCurr =='INR'" >{{ item.key }} : {{ toNum(item.value) | currency : 'INR'}} </div>
-                <div (click) = "toggleCurrency()" class = "btn btn-dark">Change Currency</div>
+                <div *ngIf = "currentCurr =='USA'" >{{ item.key }} : {{ toNum(item.value) | currency }} </div>
               </div>
             </li>
           </ul>
