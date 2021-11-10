@@ -21,7 +21,7 @@ describe('ProductDetailsComponent', () => {
         {
           provide: ActivatedRoute,
           useValue: {
-            snapshot: {params: {id: '1'}}
+            snapshot: {params: {class: 'classA',category:'bikes',id:'1'}}
           }
         }
       ]

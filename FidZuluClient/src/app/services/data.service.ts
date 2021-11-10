@@ -40,7 +40,8 @@ export class DataService {
 
   getProducts(className:string,category:string){
     let port = className == 'classA' ? 3021 : 3022;
-    let queryUrl = `${this.baseUrl}:${port}/${className}/${className + 'service'}`;
+    let queryUrl = `${this.baseUrl}:${port}/${className}/${className + 'service/all'}`;
+    console.log(queryUrl);
     return this.http.get(queryUrl);
     
   }
