@@ -19,7 +19,7 @@ export class ProductDetailsComponent implements OnInit {
 
   objects: any = [];
   object: any = null;
-
+  
   
 
   constructor(private route: ActivatedRoute, private dataService : DataService, private location: Location) { }
