@@ -8,6 +8,7 @@ import { CategoryGalleryComponent } from './components/category-gallery/category
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { JumboTronComponent } from './components/jumbo-tron/jumbo-tron.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     CategoryGalleryComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    NavBarComponent
+    NavBarComponent,
+    JumboTronComponent
   ],
   imports: [
     BrowserModule,
