@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 import { CategoryGalleryComponent } from '../components/category-gallery/category-gallery.component';
 
-const MOCK_BOOKS = [
+const MOCK_BIKES = [
   {
     "name": "Mamba Sport 12\" Balance Bike",
     "brand": "Mamba Bikes",
@@ -39,10 +40,12 @@ export class DataService {
   }
 
   getProducts(className:string,category:string,location:string = "USA"){
+    return of(MOCK_BIKES);
+    /*
     let port = className == 'classA' ? 3021 : 3022;
     let queryUrl = `${this.baseUrl}:${port}/${className}/${category + 'service/'}/all/${location}`;
     console.log(queryUrl);
-    return this.http.get(queryUrl);
+    return this.http.get(queryUrl);*/
     
   }
 
