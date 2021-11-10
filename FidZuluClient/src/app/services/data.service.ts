@@ -46,7 +46,7 @@ export class DataService {
 
   getTeams(className:string,category:string){
     let port = className == 'classA' ? 3021 : 3022;
-    let queryUrl = `${this.baseUrl}:${port}/${className}/${category + 'service/'}/teams`;
+    let queryUrl = `${this.baseUrl}:${port}/${className}/${category + 'service/'}team`;
     console.log(queryUrl);
     return this.http.get(queryUrl);
   }
