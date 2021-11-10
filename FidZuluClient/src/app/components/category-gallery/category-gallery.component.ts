@@ -11,7 +11,11 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
       </button>
     </div>
     <div class="modal-body">
-      <p>Hello, {{name}}!</p>
+        <div class="card">
+        <div class="card-body">
+          John Doe {{name}}
+        </div>
+      </div>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
