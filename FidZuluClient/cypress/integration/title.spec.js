@@ -32,7 +32,7 @@ describe("Test Home page title", () => {
     it("should be able view details of the first bike", () =>{
         cy.wait(1000);
         cy.get(".btn").contains("Explore DVDs").click();
-        cy.wait(1000);
+        cy.wait(2000);
         cy.get(".btn").contains("View Details").each((btn) =>{
             cy.wait(500);
             cy.wrap(btn).click();

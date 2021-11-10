@@ -45,8 +45,25 @@ export class DataService {
   }
 
   getTeams(className:string,category:string){
-    let port = className == 'classA' ? 3021 : 3022;
-    let queryUrl = `${this.baseUrl}:${port}/${className}/${category + 'service/'}team`;
+    let urlCategory;
+    if(category=='books'){
+      urlCategory='book';
+    }
+    else if(category=='dvds'){
+      urlCategory='dvd';
+    }
+    else if(category=='laptops'){
+      urlCategory='laptop';
+    }
+    else if(category=='toys'){
+      urlCategory='toy';
+    }
+    else{
+      urlCategory= category;
+    }
+    let classAurl:String="http://015e-34-124-147-146.ngrok.io";
+    let classBurl:String="http://2907-34-124-147-146.ngrok.io";
+    let queryUrl = `${className == 'classA' ? classAurl : classBurl}/${className}/${urlCategory + 'service'}/team`;
     console.log(queryUrl);
     return this.http.get(queryUrl);
   }
