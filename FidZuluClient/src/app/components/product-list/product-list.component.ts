@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { ActivatedRoute } from '@angular/router';
->>>>>>> 4605a49bb71766b7a1d6d4591365d8ab6bee41c0
 import { Book } from 'src/app/models/book';
 
 @Component({
