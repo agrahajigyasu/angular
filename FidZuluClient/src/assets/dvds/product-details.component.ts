@@ -19,17 +19,11 @@ export class ProductDetailsComponent implements OnInit {
 
   objects: any = [];
   object: any = null;
-
-  currentCurr:string = 'USA';
+  
   
 
   constructor(private route: ActivatedRoute, private dataService : DataService, private location: Location) { }
 
-  toggleCurrency(){
-    console.log(this.currentCurr);
-    console.log("Toggle :", this.currentCurr == 'USA' )
-    this.currentCurr == 'USA' ? 'INR' : 'USA';
-  }
   ngOnInit(): void {
     this.productId = this.route.snapshot.params['id'];
     this.category = this.route.snapshot.params['category'];
@@ -51,9 +45,5 @@ export class ProductDetailsComponent implements OnInit {
     this.location.back();
   }
 
-  toNum(val:any){
-    console.log("VALUE : ",val);
-    return Number(val);
-  }
 
 }

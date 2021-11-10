@@ -1,6 +1,6 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4 text-info text-center">{{category|uppercase}}</h1>
+    <h1 class="display-4 text-black text-center">{{category|uppercase}}</h1>
   </div>
 </div>
 <div>
@@ -18,9 +18,41 @@
                 />
             </a> 
               </div>
-              <div class="col-md-3 ml-2 view overlay" *ngIf = 'category != "bike"'>
+              <div class="col-md-3 ml-2 view overlay" *ngIf = 'category == "books"'>
                 <a routerLink="/products/{{classType}}/{{category}}/{{i}}"><img  
                    src= {{bookImages[i]}}
+                   alt="..."
+                   class="img-fluid mask flex-center rgba-blue-light" 
+                 />
+             </a> 
+               </div>
+               <div class="col-md-3 ml-2 view overlay" *ngIf = 'category === "dvds" '>
+                <a routerLink="/products/{{classType}}/{{category}}/{{i}}"><img  
+                   src= {{dvdImages[i]}}
+                   alt="..."
+                   class="img-fluid mask flex-center rgba-blue-light" 
+                 />
+             </a> 
+               </div>
+               <div class="col-md-3 ml-2 view overlay" *ngIf = 'category === "laptop" '>
+                <a routerLink="/products/{{classType}}/{{category}}/{{i}}"><img  
+                   src= {{laptopImages[i]}}
+                   alt="..."
+                   class="img-fluid mask flex-center rgba-blue-light" 
+                 />
+             </a> 
+               </div>
+               <div class="col-md-3 ml-2 view overlay" *ngIf = 'category === "toys" '>
+                <a routerLink="/products/{{classType}}/{{category}}/{{i}}"><img  
+                   src= {{toyImages[i]}}
+                   alt="..."
+                   class="img-fluid mask flex-center rgba-blue-light" 
+                 />
+             </a> 
+               </div>
+               <div class="col-md-3 ml-2 view overlay" *ngIf = 'category === "food" '>
+                <a routerLink="/products/{{classType}}/{{category}}/{{i}}"><img  
+                   src= {{foodImages[i]}}
                    alt="..."
                    class="img-fluid mask flex-center rgba-blue-light" 
                  />
