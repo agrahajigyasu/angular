@@ -34,18 +34,21 @@ const MOCK_BIKES = [
 })
 export class DataService {
   
-  baseUrl:string = 'http:/localhost:'
+  baseUrl:string = 'http://localhost'
   constructor(private http: HttpClient) { 
 
   }
 
   getProducts(className:string,category:string,location:string = "USA"){
-    return of(MOCK_BIKES);
-    /*
+    
     let port = className == 'classA' ? 3021 : 3022;
-    let queryUrl = `${this.baseUrl}:${port}/${className}/${category + 'service/'}/all/${location}`;
+
+    //http://localhost:3022/classB/laptopservice/all/USA
+    let queryUrl = `${this.baseUrl}:${port}/${className}/${category + 'service'}/all/${location}`;
     console.log(queryUrl);
-    return this.http.get(queryUrl);*/
+    //return this.http.get(queryUrl);
+
+    return of(MOCK_BIKES);
     
   }
 
