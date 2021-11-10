@@ -36,7 +36,8 @@ export class DataService {
       urlCategory= category;
     }
     let queryUrl = `${this.baseUrl}:${port}/${className}/${urlCategory + 'service'}/all/${location}`;
-
+    let classAurl:string = " http://c47f-34-124-147-146.ngrok.io";
+    let classBurl:string= "http://31e2-34-124-147-146.ngrok.io";  
     console.log("Url: "+queryUrl);
 
    // let queryUrl = this.baseUrl +":3022/classB/bookservice/all/India";
