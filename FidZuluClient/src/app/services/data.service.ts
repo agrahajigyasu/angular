@@ -38,11 +38,20 @@ export class DataService {
 
   }
 
-  getProducts(className:string,category:string){
+  getProducts(className:string,category:string,location:string = "USA"){
     let port = className == 'classA' ? 3021 : 3022;
-    let queryUrl = `${this.baseUrl}:${port}/${className}/${className + 'service/all'}`;
+    let queryUrl = `${this.baseUrl}:${port}/${className}/${category + 'service/'}/all/${location}`;
     console.log(queryUrl);
     return this.http.get(queryUrl);
     
   }
+
+  getTeams(className:string,category:string){
+    let port = className == 'classA' ? 3021 : 3022;
+    let queryUrl = `${this.baseUrl}:${port}/${className}/${category + 'service/'}/teams`;
+    console.log(queryUrl);
+    return this.http.get(queryUrl);
+  }
+
+  
 }
