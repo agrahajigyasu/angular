@@ -18,8 +18,6 @@ export class DataService {
     let port = className == 'classA' ? 3021 : 3022;
     let urlCategory;
 
-    //http://localhost:3022/classB/laptopservice/all/USA
-
     if(category=='books'){
       urlCategory='book';
     }
