@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CategoryGalleryComponent } from '../components/category-gallery/category-gallery.component';
 
@@ -32,6 +33,15 @@ const MOCK_BOOKS = [
 })
 export class DataService {
   
-  constructor() { }
+  baseUrl:string = 'http:/localhost:'
+  constructor(private http: HttpClient) { 
 
+  }
+
+  getProducts(className:string,category:string){
+    let port = className == 'classA' ? 3021 : 3022;
+    let queryUrl = `${this.baseUrl}:${port}/${className}/${className + 'service'}`;
+    return this.http.get(queryUrl);
+    
+  }
 }
