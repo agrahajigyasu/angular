@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
+=======
+import { ActivatedRoute } from '@angular/router';
+>>>>>>> 4605a49bb71766b7a1d6d4591365d8ab6bee41c0
 import { Book } from 'src/app/models/book';
 
 @Component({
@@ -7,6 +11,8 @@ import { Book } from 'src/app/models/book';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
+
+  
 
   books: Book[] = [
     {
@@ -56,7 +62,20 @@ export class ProductListComponent implements OnInit {
   item:String = "bookItem"
   constructor() { }
 
+  // private route: ActivatedRoute
   ngOnInit(): void {
+
+
+    // this.route.queryParams
+    //   .filter(params => params.category)
+    //   .subscribe(params => {
+    //     console.log(params); // { category: "fiction" }
+    //     this.category = params.category;
+    //     console.log(this.category); // fiction
+    //   }
+    // );
+  // }
+
   }
 
 

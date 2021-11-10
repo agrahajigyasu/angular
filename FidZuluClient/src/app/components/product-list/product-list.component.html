@@ -1,6 +1,6 @@
 <div>
     <div  *ngIf = 'item === "bikeItem"' class="row">
-    <div class="col-sm-3" *ngFor = "let book of books" >
+    <div class="col-sm-3" *ngFor = "let book of books"; let i = index >
     <div class="card">
         <img
           src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
@@ -15,7 +15,8 @@
            <li>ISBN: {{book.ISBN}}</li>
            <li>Publisher: {{book.publisher}}</li>
           </p>
-          <a href="#!" class="btn btn-primary">Button</a>
+          <a routerLink="/products/classA/bike/index" class="btn btn-primary">
+          class="btn btn-primary">Button</a>
         </div>
       </div>
       <br>
@@ -23,7 +24,7 @@
       </div>
 
       <div  *ngIf = 'item === "bookItem"' class="row">
-        <div class="col-sm-3" *ngFor = "let book of books" >
+        <div class="col-sm-3" *ngFor = "let book of books; let i = index" >
         <div class="card">
             <img
               src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
@@ -38,7 +39,7 @@
                <li>ISBN: {{book.ISBN}}</li>
                <li>Publisher: {{book.publisher}}</li>
               </p>
-              <a href="#!" class="btn btn-primary">Button</a>
+              <a routerLink="/products/classA/bike/index" class="btn btn-primary">Button</a>
             </div>
           </div>
           <br>
