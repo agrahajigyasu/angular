@@ -7,13 +7,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CategoryGalleryComponent } from './components/category-gallery/category-gallery.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoryGalleryComponent,
     ProductListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
