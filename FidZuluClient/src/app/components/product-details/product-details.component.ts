@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from 'src/app/models/book';
 import { DataService } from 'src/app/services/data.service';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-product-details',
@@ -20,7 +22,7 @@ export class ProductDetailsComponent implements OnInit {
 
   
 
-  constructor(private route: ActivatedRoute, private dataService : DataService) { }
+  constructor(private route: ActivatedRoute, private dataService : DataService, private location: Location) { }
 
   ngOnInit(): void {
     this.productId = this.route.snapshot.params['id'];
@@ -57,5 +59,10 @@ export class ProductDetailsComponent implements OnInit {
   private onCompare(_left: KeyValue<any, any>, _right: KeyValue<any, any>): number {
     return -1;
   }
+
+  goBack(): void {
+    this.location.back();
+  }
+
 
 }

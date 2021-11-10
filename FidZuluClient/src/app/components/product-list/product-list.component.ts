@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from 'src/app/models/book';
 import { DataService } from 'src/app/services/data.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-product-list',
@@ -20,7 +21,7 @@ export class ProductListComponent implements OnInit {
   bookImages:any = ["/assets/book0.jpg","/assets/book1.jpg","/assets/book2.jpg","/assets/book3.jpg"]
   category:string = "";
   classType:string = "";
-  constructor( private dataService : DataService, private route:ActivatedRoute ) { }
+  constructor( private dataService : DataService, private route:ActivatedRoute,  private location: Location ) { }
 
   ngOnInit(): void {
 
@@ -30,6 +31,9 @@ export class ProductListComponent implements OnInit {
 
   }
 
+  goBack(): void {
+    this.location.back();
+  }
 
 
 }
